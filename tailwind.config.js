@@ -14,7 +14,8 @@ module.exports = {
         headerBox: "#E81D3E",
         textFooter: "#A6B6CE",
         policyBackground: "#F5F9FF",
-        searchBar: '#C1DAFF'
+        searchBar: '#C1DAFF',
+        bgButton: '#D6D6D6',
       },
       width: {
         searchBar: "510px",
