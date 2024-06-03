@@ -1,4 +1,3 @@
-import React from "react";
 import logoHacom from "../../assets/logos/logo-hacom.svg";
 import { FaSearch } from "react-icons/fa";
 import { PiDesktopTowerDuotone } from "react-icons/pi";
