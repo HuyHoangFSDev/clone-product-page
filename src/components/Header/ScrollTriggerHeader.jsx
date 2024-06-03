@@ -9,7 +9,7 @@ import PurchaseAmount from "../../utils/FormatCurrency";
 
 function ScrollTriggerHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { purchase, addCart } = useStore();
+  const { product, purchase, addCart } = useStore();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,11 +53,14 @@ function ScrollTriggerHeader() {
               Đăng nhập/Đăng ký
             </p>
           </div>
-          <div className="flex items-center text-customeBlue">
+          <div className="flex items-center text-customeBlue gap-4 w-40">
             <MdOutlineShoppingCart className="w-10 h-10 text-customeBlue" />
             <div>
               <p className="text-sm">Giỏ hàng</p>
               <PurchaseAmount purchase={purchase} />
+            </div>
+            <div className="absolute right-28 top-0 w-6 h-6 rounded-full items-center text-center bg-red-500 text-white">
+              <p>{product}</p>
             </div>
           </div>
         </div>
