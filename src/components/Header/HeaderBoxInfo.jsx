@@ -16,7 +16,6 @@ function ModalContent() {
 
 function HeaderBoxInfo() {
   const [showModal, setShowModal] = useState(false);
-  console.log(showModal);
 
   return (
     <>

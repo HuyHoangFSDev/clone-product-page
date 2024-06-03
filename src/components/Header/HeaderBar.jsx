@@ -3,10 +3,14 @@ import { FaSearch } from "react-icons/fa";
 import { PiDesktopTowerDuotone } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import '../../assets/style/style.scss'
-
+import "../../assets/style/style.scss";
+import { useStore } from "../../app/store";
+import PurchaseAmount from "../../utils/FormatCurrency";
 
 function HeaderBar() {
+  const { purchase, addCart } = useStore();
+  console.log(purchase);
+
   return (
     <div className="container flex relative bg-white pt-4 pb-8">
       <img src={logoHacom} alt="logo" className="h-auto" />
@@ -25,17 +29,21 @@ function HeaderBar() {
       <div className="flex absolute right-0 items-center gap-10">
         <div className="flex items-center gap-1">
           <PiDesktopTowerDuotone className="w-10 h-10 text-customeBlue" />
-          <p className="text-sm text-customeBlue font-bold">Xây dựng cấu hình</p>
+          <p className="text-sm text-customeBlue font-bold">
+            Xây dựng cấu hình
+          </p>
         </div>
         <div className="flex items-center gap-1">
           <CgProfile className="w-10 h-10 text-customeBlue" />
-          <p className="text-sm text-customeBlue font-bold">Đăng nhập/Đăng ký</p>
+          <p className="text-sm text-customeBlue font-bold">
+            Đăng nhập/Đăng ký
+          </p>
         </div>
         <div className="flex items-center text-customeBlue">
           <MdOutlineShoppingCart className="w-10 h-10 text-customeBlue    " />
           <div>
             <p className="text-sm">Giỏ hàng</p>
-            <p className="font-bold">0đ</p>
+            <PurchaseAmount purchase={purchase}/>
           </div>
         </div>
       </div>

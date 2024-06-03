@@ -4,9 +4,12 @@ import { FaSearch } from "react-icons/fa";
 import { PiDesktopTowerDuotone } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { useStore } from "../../app/store";
+import PurchaseAmount from "../../utils/FormatCurrency";
 
 function ScrollTriggerHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { purchase, addCart } = useStore();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +21,11 @@ function ScrollTriggerHeader() {
   }, []);
 
   return (
-    <div className={`fixed top-0 left-0 w-full bg-white z-30 shadow-md transition-transform duration-300 ${isScrolled ? 'translate-y-0' : '-translate-y-full'}`}>
+    <div
+      className={`fixed top-0 left-0 w-full bg-white z-30 shadow-md transition-transform duration-300 ${
+        isScrolled ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="container flex relative pt-4 pb-8">
         <img src={logoHacom} alt="logo" className="h-auto" />
         <div className="absolute left-1/4">
@@ -36,17 +43,21 @@ function ScrollTriggerHeader() {
         <div className="flex absolute right-0 items-center gap-10">
           <div className="flex items-center gap-1">
             <PiDesktopTowerDuotone className="w-10 h-10 text-customeBlue" />
-            <p className="text-sm text-customeBlue font-bold">Xây dựng cấu hình</p>
+            <p className="text-sm text-customeBlue font-bold">
+              Xây dựng cấu hình
+            </p>
           </div>
           <div className="flex items-center gap-1">
             <CgProfile className="w-10 h-10 text-customeBlue" />
-            <p className="text-sm text-customeBlue font-bold">Đăng nhập/Đăng ký</p>
+            <p className="text-sm text-customeBlue font-bold">
+              Đăng nhập/Đăng ký
+            </p>
           </div>
           <div className="flex items-center text-customeBlue">
             <MdOutlineShoppingCart className="w-10 h-10 text-customeBlue" />
             <div>
               <p className="text-sm">Giỏ hàng</p>
-              <p className="font-bold">0đ</p>
+              <PurchaseAmount purchase={purchase} />
             </div>
           </div>
         </div>

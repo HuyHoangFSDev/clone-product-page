@@ -4,7 +4,9 @@ import {
   MdOutlineArrowForwardIos,
   MdOutlineArrowBackIos,
 } from "react-icons/md";
-
+import { useStore } from "../../app/store";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { imgDetail, stores, promotions } from "../../assets/data/data";
 import "../../assets/style/style.scss";
 
@@ -14,6 +16,11 @@ const ProductDetail = () => {
   const [showAllStore, setShowAllStore] = useState(false);
   const [showAllPromotions, setShowAllPromotions] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const { purchase, addCart } = useStore();
+  const notify = () =>
+    toast.success("Thêm vào giỏ hàng thành công!", {
+      position: "top-center",
+    });
 
   const imgListRef = useRef(null);
 
@@ -60,6 +67,11 @@ const ProductDetail = () => {
 
   const toggleShowAllPromotions = () => {
     setShowAllPromotions(!showAllPromotions);
+  };
+
+  const handleAddCart = () => {
+    addCart(quantity);
+    notify();
   };
 
   return (
@@ -237,7 +249,10 @@ const ProductDetail = () => {
                   -
                 </button>
               </div>
-              <button className="ml-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+              <button
+                onClick={handleAddCart}
+                className="ml-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+              >
                 THÊM VÀO GIỎ
               </button>
               <button className="ml-2 px-4 py-2 border rounded hover:bg-gray-200">
@@ -265,7 +280,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>{" "}
-
+      <ToastContainer />
     </>
   );
 };
