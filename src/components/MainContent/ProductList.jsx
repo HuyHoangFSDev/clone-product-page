@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaBagShopping } from "react-icons/fa6";
 import { products } from "../../assets/data/data";
 
@@ -39,17 +39,61 @@ const ProductCard = ({ product }) => {
 };
 
 const ProductList = () => {
+  const [listProduct, setListProduct] = useState({
+    type: "SAN_PHAM_TUONG_TU",
+    isSelected: true,
+  });
+
+  console.log(listProduct.isSelected);
+
+  const renderProducts = () => {
+    switch (listProduct.type) {
+      case "SAN_PHAM_TUONG_TU":
+        return products
+          .filter((product) => !product.haveSeen)
+          .map((product, index) => (
+            <ProductCard key={index} product={product} />
+          ));
+      case "SAN_PHAM_DA_XEM":
+        return products
+          .filter((product) => product.haveSeen)
+          .map((product, index) => (
+            <ProductCard key={index} product={product} />
+          ));
+      default:
+        return <p>Loading...</p>;
+    }
+  };
+
   return (
     <div className="container mx-auto">
       <div className="flex mt-8 mb-4 px-4 gap-4">
-        <h2 className="text-blue-500 text-xl font-bold">SẢN PHẨM TƯƠNG TỰ</h2>
-        <h2 className="text-gray-700 text-xl font-bold">SẢN PHẨM ĐÃ XEM</h2>
+        <h2
+          onClick={() =>
+            setListProduct({ type: "SAN_PHAM_TUONG_TU", isSelected: true })
+          }
+          className={`${
+            listProduct.isSelected
+            ? "text-white bg-blue-500"
+            : "text-blue-500 bg-white"
+          } text-xl font-bold p-4 rounded-t-lg`}
+        >
+          SẢN PHẨM TƯƠNG TỰ
+        </h2>
+        <h2
+          onClick={() =>
+            setListProduct({ type: "SAN_PHAM_DA_XEM", isSelected: false })
+          }
+          className={`${
+            !listProduct.isSelected
+              ? "text-white bg-blue-500"
+              : "text-blue-500 bg-white"
+          } text-xl font-bold p-4 rounded-t-lg`}
+        >
+          SẢN PHẨM ĐÃ XEM
+        </h2>
       </div>
-      <div className="flex flex-wrap justify-start">
-        {products.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
-      </div>
+      <div className="flex flex-wrap justify-start">{renderProducts()}</div>
     </div>
   );
 };

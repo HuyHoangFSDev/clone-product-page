@@ -97,6 +97,7 @@ export const products = [
     discountedPrice: "15.499.000₫",
     discount: 7,
     rating: 0,
+    haveSeen: false
   },
   {
     name: "Laptop Acer Gaming Aspire 7 A715-43G-R8GA (NH.QHDSV.002) (R5...",
@@ -105,6 +106,7 @@ export const products = [
     discountedPrice: "15.999.000₫",
     discount: 33,
     rating: 0,
+    haveSeen: true
   },
   {
     name: "Laptop Acer Gaming Aspire 7 A715-76G-5806 (NH.QMFSV.002) (i5...",
@@ -113,6 +115,16 @@ export const products = [
     discountedPrice: "20.999.000₫",
     discount: 9,
     rating: 0,
+    haveSeen: false
+  },
+  {
+    name: "Laptop Acer Gaming Aspire 7 A715-76G-5806 (NH.QMFSV.002) (i5...",
+    image: product3,
+    originalPrice: "22.999.000₫",
+    discountedPrice: "20.999.000₫",
+    discount: 9,
+    rating: 0,
+    haveSeen: true
   },
 ];
 
