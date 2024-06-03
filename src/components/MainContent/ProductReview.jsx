@@ -6,10 +6,18 @@ import Specification from "./Specification";
 import Review from "./Review";
 import { FaStar } from "react-icons/fa6";
 
-
 const ProductReview = () => {
   const [showSpecification, setShowSpecification] = useState(false);
   const [showReview, setShowReview] = useState(false);
+  const [comment, setComment] = useState("");
+  const [isSubmit, setIsSubmit] = useState(false)
+  const handleChange = (e) => {
+    setComment(e);
+  };
+
+  const handleSubmitComment = () => {
+    setIsSubmit(true)
+  }
 
   return (
     <>
@@ -21,7 +29,7 @@ const ProductReview = () => {
           <div className="text-4xl font-bold mb-2">0/5</div>
           <div className="flex items-center mb-2">
             {[...Array(5)].map((_, index) => (
-             <FaStar key={index} className="text-unRate" />
+              <FaStar key={index} className="text-unRate" />
             ))}
           </div>
           <button
@@ -35,8 +43,15 @@ const ProductReview = () => {
               className="w-full p-2 border rounded-md"
               rows="4"
               placeholder="Nhập bình luận của bạn..."
+              onChange={(e) => handleChange(e.target.value)}
             ></textarea>
-            <button className="bg-blue-500 text-white py-2 px-4 rounded-md mt-2">
+            {isSubmit && !comment && (
+              <p className="text-red-500">x Vui lòng nhập bình luận.</p>
+            )}
+            <button
+              onClick={handleSubmitComment}
+              className="bg-blue-500 text-white py-2 px-4 rounded-md mt-2"
+            >
               Gửi bình luận
             </button>
           </div>
