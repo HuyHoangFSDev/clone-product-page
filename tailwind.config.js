@@ -16,6 +16,7 @@ module.exports = {
         policyBackground: "#F5F9FF",
         searchBar: '#C1DAFF',
         bgButton: '#D6D6D6',
+        btNextPrev: '#F34549'
       },
       width: {
         searchBar: "510px",

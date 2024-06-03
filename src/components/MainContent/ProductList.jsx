@@ -1,8 +1,6 @@
 import React from "react";
 import { FaBagShopping } from "react-icons/fa6";
-import product1 from "../../assets/images/product1.jpg";
-import product2 from "../../assets/images/product2.jpg";
-import product3 from "../../assets/images/product3.jpg";
+import { products } from "../../assets/data/data";
 
 const ProductCard = ({ product }) => {
   return (
@@ -32,7 +30,7 @@ const ProductCard = ({ product }) => {
         <div className="flex justify-between items-center">
           <span className="text-green-500 text-xs">✔️ Sẵn hàng</span>
           <button className="bg-red-500 text-white text-xs p-2 rounded-full">
-            <FaBagShopping className="w-6 h-6"/>
+            <FaBagShopping className="w-6 h-6" />
           </button>
         </div>
       </div>
@@ -41,33 +39,6 @@ const ProductCard = ({ product }) => {
 };
 
 const ProductList = () => {
-  const products = [
-    {
-      name: "Laptop Acer Gaming Aspire 7 A715-42G-R4XX (NH.QAYSV.008) (R5...",
-      image: product1,
-      originalPrice: "16.650.000₫",
-      discountedPrice: "15.499.000₫",
-      discount: 7,
-      rating: 0,
-    },
-    {
-      name: "Laptop Acer Gaming Aspire 7 A715-43G-R8GA (NH.QHDSV.002) (R5...",
-      image: product2,
-      originalPrice: "23.999.000₫",
-      discountedPrice: "15.999.000₫",
-      discount: 33,
-      rating: 0,
-    },
-    {
-      name: "Laptop Acer Gaming Aspire 7 A715-76G-5806 (NH.QMFSV.002) (i5...",
-      image: product3,
-      originalPrice: "22.999.000₫",
-      discountedPrice: "20.999.000₫",
-      discount: 9,
-      rating: 0,
-    },
-  ];
-
   return (
     <div className="container mx-auto">
       <div className="flex mt-8 mb-4 px-4 gap-4">

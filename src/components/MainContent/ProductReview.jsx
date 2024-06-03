@@ -1,4 +1,5 @@
 import React from 'react';
+import { specifications } from '../../assets/data/data';
 
 const ProductReview = () => {
     return (
@@ -43,19 +44,7 @@ const ProductReview = () => {
           <div className="w-full lg:w-1/2 p-4 border rounded-md shadow-md mt-4 lg:mt-0 lg:ml-4">
             <h2 className="text-2xl font-bold mb-4">Thông số kỹ thuật</h2>
             <div className="space-y-2">
-              {[
-                ['Hãng sản xuất', 'Acer'],
-                ['Chủng loại', 'Aspire 7 A715-76G-59MW– model giải trí, gaming'],
-                ['Part Number', 'NH.QMYSV.001'],
-                ['Màu sắc, chất liệu', 'Đen (Charcoal Black); vỏ nhôm mặt A'],
-                ['Bộ vi xử lý', 'Intel® Core™ i5-12450H (3.3GHz upto 4.4Ghz/12MB cache)'],
-                ['Chipset', ''],
-                ['Bộ nhớ trong', '8GB DDR4 3200Mhz'],
-                ['Số khe cắm', '2'],
-                ['Dung lượng tối đa', '32GB'],
-                ['VGA', 'NVIDIA® GeForce RTX™ 2050 4GB GDDR6'],
-                ['Ổ cứng', '512GB SSD PCIe NVMe'],
-              ].map(([label, value], index) => (
+              {specifications.map(([label, value], index) => (
                 <div key={index} className="flex justify-between">
                   <span className="font-semibold">{label}</span>
                   <span>{value}</span>

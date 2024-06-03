@@ -10,7 +10,7 @@ import ProductDetail from "./ProductDetail";
 function MainContent() {
   return (
     <main className="relative container py-8">
-      <p className="pb-4 text-sm text-customeBlue">
+      <p className="pb-4 px-4 text-sm text-customeBlue">
         Trang chủ <span className="font-bold text-bgButton">&gt;</span> Laptop
         Acer Aspire 7 <span className="font-bold text-bgButton">&gt;</span>{" "}
         <span className="font-bold">
