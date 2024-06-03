@@ -146,14 +146,14 @@ const ProductDetail = () => {
             )}
           </ul>
           <button
-            className="bg-gray-200 text-blue-500 py-1 px-2 rounded-md mt-2"
+            className="bg-gray-200 text-black py-1 px-2 rounded-md mt-2"
             onClick={toggleSpecs}
           >
             {showFullSpecs ? "Ẩn bớt ▲" : "Xem thêm ▼"}
           </button>
         </div>
 
-        <div className="text-red-500 text-2xl font-bold mb-4">
+        <div className="text-customeBlue text-2xl font-bold mb-4">
           17.999.000₫{" "}
           <span className="text-gray-500 text-xl line-through">
             20.999.000₫

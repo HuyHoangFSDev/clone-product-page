@@ -22,8 +22,14 @@ function HeaderBar() {
         </div>
       </div>
       <div className="flex absolute right-0 items-center gap-10">
-        <PiDesktopTowerDuotone className="w-10 h-10 text-customeBlue" />
-        <CgProfile className="w-10 h-10 text-customeBlue" />
+        <div className="flex items-center gap-1">
+          <PiDesktopTowerDuotone className="w-10 h-10 text-customeBlue" />
+          <p className="text-sm text-customeBlue font-bold">Xây dựng cấu hình</p>
+        </div>
+        <div className="flex items-center gap-1">
+          <CgProfile className="w-10 h-10 text-customeBlue" />
+          <p className="text-sm text-customeBlue font-bold">Đăng nhập/Đăng ký</p>
+        </div>
         <div className="flex items-center text-customeBlue">
           <MdOutlineShoppingCart className="w-10 h-10 text-customeBlue    " />
           <div>
