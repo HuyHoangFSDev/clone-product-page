@@ -2,10 +2,11 @@ import React from "react";
 import HeaderBoxInfo from "./HeaderBoxInfo";
 import HeaderBar from "./HeaderBar";
 import ScrollTriggerHeader from "./ScrollTriggerHeader";
+import '../../assets/style/style.scss'
 
 function Header() {
   return (
-    <header className= "Header">
+    <header className= "header">
       <HeaderBoxInfo />
       <HeaderBar /> 
       <ScrollTriggerHeader/>

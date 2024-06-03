@@ -1,0 +1,52 @@
+.header {
+  .button-drop-down {
+    background: linear-gradient(
+      270deg,
+      #e23441,
+      #2b0adb,
+      #e23441,
+      #e23441,
+      #e23441,
+      #e23441
+    );
+    animation: setBG 8s linear infinite;
+    background-size: 400% 400%;
+  }
+
+  @keyframes setBG {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+.product-detail-container {
+  .store-container, .button-scroll{
+    background: linear-gradient(
+      270deg,
+      #FE280D,
+      #FF9B2D,
+      #FE280D,
+      #FE280D,
+      #FE280D,
+      #FE280D
+    );
+    animation: setBG 8s linear infinite;
+    background-size: 400% 400%;
+  }
+
+  @keyframes setBG {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+}

@@ -18,7 +18,7 @@ function ScrollTriggerHeader() {
   }, []);
 
   return (
-    <div className={`fixed top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ${isScrolled ? 'translate-y-0' : '-translate-y-full'}`}>
+    <div className={`fixed top-0 left-0 w-full bg-white z-30 shadow-md transition-transform duration-300 ${isScrolled ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="container flex relative pt-4 pb-8">
         <img src={logoHacom} alt="logo" className="h-auto" />
         <div className="absolute left-1/4">

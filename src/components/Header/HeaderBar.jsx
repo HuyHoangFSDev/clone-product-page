@@ -3,6 +3,8 @@ import { FaSearch } from "react-icons/fa";
 import { PiDesktopTowerDuotone } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import '../../assets/style/style.scss'
+
 
 function HeaderBar() {
   return (
