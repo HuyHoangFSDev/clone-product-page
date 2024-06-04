@@ -91,40 +91,44 @@ export const specifications = [
 
 export const products = [
   {
+    id: 1,
     name: "Laptop Acer Gaming Aspire 7 A715-42G-R4XX (NH.QAYSV.008) (R5...",
     image: product1,
     originalPrice: "16.650.000₫",
     discountedPrice: "15.499.000₫",
     discount: 7,
     rating: 0,
-    haveSeen: false
+    haveSeen: false,
   },
   {
+    id: 2,
     name: "Laptop Acer Gaming Aspire 7 A715-43G-R8GA (NH.QHDSV.002) (R5...",
     image: product2,
     originalPrice: "23.999.000₫",
     discountedPrice: "15.999.000₫",
     discount: 33,
     rating: 0,
-    haveSeen: true
+    haveSeen: true,
   },
   {
+    id: 3,
     name: "Laptop Acer Gaming Aspire 7 A715-76G-5806 (NH.QMFSV.002) (i5...",
     image: product3,
     originalPrice: "22.999.000₫",
     discountedPrice: "20.999.000₫",
     discount: 9,
     rating: 0,
-    haveSeen: false
+    haveSeen: false,
   },
   {
+    id: 4,
     name: "Laptop Acer Gaming Aspire 7 A715-76G-5806 (NH.QMFSV.002) (i5...",
     image: product3,
     originalPrice: "22.999.000₫",
     discountedPrice: "20.999.000₫",
     discount: 9,
     rating: 0,
-    haveSeen: true
+    haveSeen: true,
   },
 ];
 
